@@ -32,17 +32,19 @@ let plantImg;
 
 // Music
 let wetHands;
+let camVer;
 
 // Load images and music
 function preload() {
   // Music
   soundFormats("mp3");
-  wetHands = loadSound("wetHands.mp3");
+  wetHands = loadSound("music/wetHands.mp3");
+  camVer = loadSound("music/caminosVerdes.mp3");
 
   // Images
-  seedImg = loadImage("seed.png");
-  sapImg = loadImage("sapling.png");
-  plantImg = loadImage("poppy.png");
+  seedImg = loadImage("sprites/seed.png");
+  sapImg = loadImage("sprites/sapling.png");
+  plantImg = loadImage("sprites/poppy.png");
 }
 
 function setup() {
