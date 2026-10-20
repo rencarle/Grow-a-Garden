@@ -267,10 +267,18 @@ function mouseClicked() {
   // usually blocked w/out user gesture in modern day browsers
   // which is annoying
   if (!music) {
-    music = true;
     // Play music and loop it
-    wetHands.play();
-    wetHands.loop();
+    music = true;
+    num = Math.random();
+
+    if (num <= 0.5) {
+      wetHands.play();
+      wetHands.loop();
+    }
+    else {
+      camVer.play();
+      camVer.loop();
+    }
   }
 }
 
