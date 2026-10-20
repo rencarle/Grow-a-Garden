@@ -94,6 +94,17 @@ function resetArrays() {
   }
 }
 
+function playNextSong() {
+  num = Math.random();
+
+  if (num <= 0.5) {
+    wetHands.play();
+  }
+  else {
+    camVer.play();
+  }
+}
+
 function draw() {
   // Only grow if the player pressed 'p'
   if (play) {
@@ -129,6 +140,10 @@ function draw() {
   textFont('Palatino');
   text("Click on the squares to plant a seed.", 10, 385);
   text("Press 'p' to play/pause growth and 'r' to reset the garden.", 10, 410);
+
+  // Check if song ended
+  camVer.onended(playNextSong);
+  wetHands.onended(playNextSong);
 }
 
 class Empty {
@@ -273,11 +288,9 @@ function mouseClicked() {
 
     if (num <= 0.5) {
       wetHands.play();
-      wetHands.loop();
     }
     else {
       camVer.play();
-      camVer.loop();
     }
   }
 }
